@@ -1,0 +1,7 @@
+<% (1..10).each do |i| %>
+post_<%= i %>:
+  id: <%= i %>
+  name: "test_user_<%= i %>"
+  title: "test_title_<%= i %>"
+  content: "test_content_<%= i %>"
+<% end %>
