@@ -12,6 +12,7 @@ end
 
 gem 'jquery-rails'
 gem 'rspec-rails'
+gem 'sorcery'
 
 group :test do
   gem 'shoulda-matchers'

@@ -1,4 +1,10 @@
 Blog::Application.routes.draw do
+  resources :user_sessions
+  resources :users , except: [:index]
+
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+
   resources :posts do
     resources :comments
   end
@@ -54,7 +60,7 @@ Blog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
- root :to => 'home#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
