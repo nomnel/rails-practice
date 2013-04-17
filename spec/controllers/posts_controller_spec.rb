@@ -2,7 +2,7 @@ require 'spec_helper'
 include AuthHelper
 
 describe PostsController do
-  fixtures :posts
+  fixtures :posts, :users
 
   def valid_attributes
     {name: 'testuser',
@@ -13,7 +13,12 @@ describe PostsController do
 
   context 'when signin' do
     before(:each) do
-      http_login
+      @user = users(:test)
+      login_user
+    end
+
+    after(:each) do
+      logout_user
     end
 
     describe "GET index" do
@@ -144,27 +149,27 @@ describe PostsController do
 
     describe "GET new" do
       before { get :new }
-      it { should respond_with 401 }
+      it { response.should redirect_to login_path }
     end
 
     describe "GET edit" do
       before { get :edit, { id: 2 } }
-      it { should respond_with 401 }
+      it { response.should redirect_to login_path }
     end
 
     describe "POST create" do
       before { post :create, { post: valid_attributes } }
-      it { should respond_with 401 }
+      it { response.should redirect_to login_path }
     end
 
     describe "PUT update" do
       before { put :update, { id: 2, story: { title: 'foo' } } }
-      it { should respond_with 401 }
+      it { response.should redirect_to login_path }
     end
 
     describe "DELETE destroy" do
       before { delete :destroy, { id: 2 } }
-      it { should respond_with 401 }
+      it { response.should redirect_to login_path }
     end
   end
 end

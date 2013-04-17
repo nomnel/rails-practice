@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe UserSessionsController do
+  fixtures :users
 
   describe "GET 'new'" do
     it "returns http success" do
@@ -18,8 +19,10 @@ describe UserSessionsController do
 
   describe "GET 'destroy'" do
     it "returns http success" do
+      @user = users(:test)
+      login_user
       get 'destroy'
-      response.should be_success
+      response.should redirect_to posts_url
     end
   end
 
