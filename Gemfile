@@ -16,4 +16,6 @@ gem 'sorcery'
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'capybara-webkit'
 end

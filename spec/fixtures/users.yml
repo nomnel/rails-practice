@@ -3,4 +3,4 @@ test:
   username: "test"
   email: "test@hoge.com"
   salt: <%= salt = "hogehoge" %>
-  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("secret", salt) %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("test", salt) %>
