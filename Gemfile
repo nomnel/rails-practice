@@ -13,6 +13,7 @@ end
 gem 'jquery-rails'
 gem 'rspec-rails'
 gem 'sorcery'
+gem 'settingslogic'
 
 group :test do
   gem 'shoulda-matchers'

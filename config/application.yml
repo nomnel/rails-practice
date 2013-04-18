@@ -1,0 +1,14 @@
+default: &default
+  twitter:
+    consumer_key: "consumer_key"
+    consumer_secret: "consumer_secret"
+    callback_url: "http://callback_url.dev"
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
