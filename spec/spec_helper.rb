@@ -6,6 +6,7 @@ require 'rspec/autorun'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'capybara-webkit'
+require 'paperclip/matchers'
 
 Capybara.javascript_driver = :webkit
 
@@ -42,4 +43,5 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include Sorcery::TestHelpers::Rails
+  config.include Paperclip::Shoulda::Matchers
 end

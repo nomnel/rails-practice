@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418071101) do
+ActiveRecord::Schema.define(:version => 20130419063709) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -49,12 +49,16 @@ ActiveRecord::Schema.define(:version => 20130418071101) do
   add_index "tags", ["post_id"], :name => "index_tags_on_post_id"
 
   create_table "users", :force => true do |t|
-    t.string   "username",         :null => false
+    t.string   "username",            :null => false
     t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'rspec-rails'
 gem 'sorcery'
 gem 'settingslogic'
+gem 'paperclip'
 
 group :test do
   gem 'shoulda-matchers'

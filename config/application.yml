@@ -1,8 +1,8 @@
 default: &default
   twitter:
-    consumer_key: "consumer_key"
-    consumer_secret: "consumer_secret"
-    callback_url: "http://callback_url.dev"
+    consumer_key: "eIhfMPMasynnFYl22u6zw"
+    consumer_secret: "8klw7iwefig17KIclSlQjL55iawfm1WZP7YqQrmyQs"
+    callback_url: "http://rails-practice.dev/oauth/callback?provider=twitter"
 
 development:
   <<: *default

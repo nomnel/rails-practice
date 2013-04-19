@@ -4,7 +4,13 @@ describe UsersController do
   fixtures :users
 
   def valid_attributes
-    { "username" => "MyString" }
+    { username: "MyString",
+      email: "MyString",
+      avatar_file_name: '私のテキスト_n',
+      avatar_content_type: 'image/png',
+      avatar_file_size: 1,
+      avatar_updated_at: '2011-07-13 14:53:38'
+    }
   end
 
   def valid_session
